@@ -152,12 +152,12 @@ export default function Pricing() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="relative mb-24 overflow-hidden rounded-[34px] border border-bpt-border/70 bg-[linear-gradient(180deg,rgba(247,245,240,0.88)_0%,rgba(255,255,255,0.92)_100%)] p-5 shadow-[0_30px_90px_rgba(26,26,26,0.06)] lg:p-7"
+          className="relative mb-24 overflow-hidden rounded-[34px] border border-bpt-border/70 bg-[linear-gradient(180deg,rgba(247,245,240,0.88)_0%,rgba(255,255,255,0.92)_100%)] p-4 shadow-[0_30px_90px_rgba(26,26,26,0.06)] sm:p-5 lg:p-7"
         >
           <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-bpt-red/35 to-transparent" />
 
-          <div className="mb-8 flex flex-wrap items-center justify-between gap-4 px-2">
-            <div className="flex items-center gap-3">
+          <div className="mb-8 flex flex-col gap-4 px-1 sm:px-2 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-3 sm:items-center">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-bpt-red/8 text-bpt-red">
                 <MapPin className="h-5 w-5" />
               </div>
@@ -165,7 +165,7 @@ export default function Pricing() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bpt-red">
                   En présentiel
                 </p>
-                <h3 className="text-[20px] font-semibold text-bpt-charcoal">
+                <h3 className="text-[18px] font-semibold text-bpt-charcoal sm:text-[20px]">
                   Coaching privé en présentiel
                 </h3>
               </div>
@@ -182,7 +182,7 @@ export default function Pricing() {
           </div>
 
           <div className="grid gap-6 xl:grid-cols-[320px_minmax(0,1fr)]">
-            <div className="rounded-[28px] border border-white/80 bg-white/75 p-6 shadow-[0_20px_60px_rgba(26,26,26,0.04)]">
+            <div className="rounded-[28px] border border-white/80 bg-white/75 p-5 shadow-[0_20px_60px_rgba(26,26,26,0.04)] sm:p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bpt-text-muted/60">
                  Pourquoi choisir le coaching privé
               </p>
@@ -221,7 +221,7 @@ export default function Pricing() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.55, delay: 0.45 + 0.12 * i }}
                     className={cn(
-                      "group relative block overflow-hidden rounded-[30px] border p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_36px_100px_rgba(26,26,26,0.14)] lg:p-10",
+                      "group relative block overflow-hidden rounded-[30px] border p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_36px_100px_rgba(26,26,26,0.14)] sm:p-6 lg:p-10",
                       plan.dark
                         ? "border-bpt-charcoal bg-bpt-charcoal text-white shadow-[0_28px_90px_rgba(26,26,26,0.18)]"
                         : "border-white/80 bg-white text-bpt-charcoal shadow-[0_24px_80px_rgba(26,26,26,0.08)]"
@@ -237,7 +237,7 @@ export default function Pricing() {
                     />
 
                     <div className="relative">
-                      <div className="mb-6 flex items-start justify-between gap-4">
+                      <div className="mb-6 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
                         <div>
                           <span
                             className={cn(
@@ -261,7 +261,7 @@ export default function Pricing() {
                             </div>
 
                             <div>
-                              <h4 className="text-[24px] font-semibold">{plan.name}</h4>
+                              <h4 className="text-[21px] font-semibold sm:text-[24px]">{plan.name}</h4>
                               <p
                                 className={cn(
                                   "mt-1 text-[11px] uppercase tracking-[0.14em]",
@@ -274,9 +274,9 @@ export default function Pricing() {
                           </div>
                         </div>
 
-                        <div className="text-right">
+                        <div className="sm:text-right">
                           <div className="flex items-end gap-1">
-                            <span className="font-heading text-[4rem] leading-none tracking-[-0.05em]">
+                            <span className="font-heading text-[3.1rem] leading-none tracking-[-0.05em] sm:text-[4rem]">
                               {plan.price}€
                             </span>
                           </div>
@@ -334,7 +334,7 @@ export default function Pricing() {
 
                       <div
                         className={cn(
-                          "mt-8 flex items-center justify-between rounded-full border px-5 py-4 transition-all duration-500",
+                          "mt-8 flex min-h-11 flex-wrap items-center justify-between gap-3 rounded-3xl border px-5 py-4 transition-all duration-500 sm:rounded-full",
                           plan.dark
                             ? "border-white/10 bg-white/8 group-hover:bg-white/12"
                             : "border-bpt-border/70 bg-bpt-cream/55 group-hover:bg-bpt-cream/80"
@@ -345,7 +345,7 @@ export default function Pricing() {
                         </span>
                         <div
                           className={cn(
-                            "flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-500 group-hover:rotate-45",
+                            "flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full transition-transform duration-500 group-hover:rotate-45",
                             plan.dark ? "bg-white text-bpt-charcoal" : "bg-bpt-charcoal text-white"
                           )}
                         >
@@ -365,13 +365,13 @@ export default function Pricing() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.62 }}
         >
-          <div className="mb-10 flex items-center gap-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-bpt-border to-bpt-border" />
+          <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <div className="h-px w-full flex-1 bg-gradient-to-r from-transparent via-bpt-border to-bpt-border" />
             <span className="inline-flex items-center gap-2 rounded-full border border-bpt-border/70 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-bpt-charcoal">
               <Sparkles className="h-3.5 w-3.5 text-bpt-red" />
               Si tu préfères commencer à distance
             </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-bpt-border to-bpt-border" />
+            <div className="h-px w-full flex-1 bg-gradient-to-l from-transparent via-bpt-border to-bpt-border" />
           </div>
 
           <div className="grid gap-5 lg:grid-cols-3">
@@ -385,7 +385,7 @@ export default function Pricing() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.72 + 0.08 * i }}
                 className={cn(
-                  "group relative block overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(26,26,26,0.08)]",
+                  "group relative block overflow-hidden rounded-[28px] border p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(26,26,26,0.08)] sm:p-7",
                   plan.featured
                     ? "border-bpt-charcoal bg-bpt-charcoal text-white shadow-[0_24px_80px_rgba(26,26,26,0.15)]"
                     : "border-bpt-border/70 bg-white"
@@ -418,7 +418,7 @@ export default function Pricing() {
 
                   <h4
                     className={cn(
-                      "mt-2 text-[24px] font-semibold",
+                      "mt-2 text-[22px] font-semibold sm:text-[24px]",
                       plan.featured ? "text-white" : "text-bpt-charcoal"
                     )}
                   >
@@ -428,7 +428,7 @@ export default function Pricing() {
                   <div className="mt-5 flex items-end gap-1">
                     <span
                       className={cn(
-                        "font-heading text-[3rem] leading-none tracking-[-0.05em]",
+                        "font-heading text-[2.7rem] leading-none tracking-[-0.05em] sm:text-[3rem]",
                         plan.featured ? "text-white" : "text-bpt-charcoal"
                       )}
                     >
@@ -476,7 +476,7 @@ export default function Pricing() {
 
                   <div
                     className={cn(
-                      "mt-8 flex items-center justify-between rounded-full border px-5 py-4 transition-all duration-500",
+                      "mt-8 flex min-h-11 flex-wrap items-center justify-between gap-3 rounded-3xl border px-5 py-4 transition-all duration-500 sm:rounded-full",
                       plan.featured
                         ? "border-white/10 bg-white/8 group-hover:bg-white/12"
                         : "border-bpt-border/70 bg-bpt-cream/50 group-hover:bg-bpt-cream/75"
@@ -492,7 +492,7 @@ export default function Pricing() {
                     </span>
                     <div
                       className={cn(
-                        "flex h-10 w-10 items-center justify-center rounded-full transition-transform duration-500 group-hover:rotate-45",
+                        "flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full transition-transform duration-500 group-hover:rotate-45",
                         plan.featured ? "bg-white text-bpt-charcoal" : "bg-bpt-charcoal text-white"
                       )}
                     >

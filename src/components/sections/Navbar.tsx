@@ -24,6 +24,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) {
+        setMobileOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <nav
       className={cn(
@@ -33,20 +44,20 @@ export default function Navbar() {
           : "bg-transparent py-5"
       )}
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-12">
+        <a href="#" className="flex min-w-0 items-center gap-3">
           <Image
             src="/logo.jpeg"
             alt="Logo Baptiste Personal Trainer"
             width={36}
             height={36}
-            className="rounded-full"
+            className="h-9 w-9 flex-shrink-0 rounded-full"
           />
-          <div className="hidden sm:block leading-none">
-            <span className="text-[13px] font-semibold tracking-[0.2em] text-bpt-charcoal uppercase">
+          <div className="hidden min-w-0 leading-none sm:block">
+            <span className="block truncate text-[12px] font-semibold uppercase tracking-[0.16em] text-bpt-charcoal md:text-[13px] md:tracking-[0.2em]">
               Baptiste
             </span>
-            <span className="block text-[11px] tracking-[0.15em] text-bpt-text-muted uppercase">
+            <span className="block truncate text-[11px] uppercase tracking-[0.12em] text-bpt-text-muted md:tracking-[0.15em]">
               Personal Trainer
             </span>
           </div>
@@ -69,16 +80,18 @@ export default function Navbar() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-bpt-charcoal text-white text-[13px] font-medium tracking-wide rounded-full hover:bg-bpt-red transition-colors duration-300"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-bpt-charcoal px-6 py-2.5 text-[13px] font-medium tracking-wide text-white transition-colors duration-300 hover:bg-bpt-red"
           >
             Prendre RDV
           </a>
         </div>
 
         <button
-          className="md:hidden text-bpt-charcoal p-2"
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-bpt-border/80 bg-white/70 text-bpt-charcoal shadow-sm md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
           aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -91,15 +104,16 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-bpt-border"
+            id="mobile-menu"
+            className="absolute left-0 right-0 top-full border-b border-bpt-border bg-white shadow-[0_18px_40px_rgba(26,26,26,0.08)] md:hidden"
           >
-            <div className="px-6 py-8 flex flex-col gap-1">
+            <div className="flex flex-col gap-1 px-4 py-6 sm:px-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-[15px] font-medium text-bpt-text-muted hover:text-bpt-charcoal py-3 border-b border-bpt-border/50 transition-colors"
+                  className="flex min-h-11 items-center border-b border-bpt-border/50 py-3 text-[15px] font-medium text-bpt-text-muted transition-colors hover:text-bpt-charcoal"
                 >
                   {link.label}
                 </a>
@@ -108,7 +122,7 @@ export default function Navbar() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center justify-center px-6 py-3 bg-bpt-charcoal text-white text-[13px] font-medium rounded-full"
+                className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-bpt-charcoal px-6 py-3 text-[13px] font-medium text-white"
               >
                 Prendre rendez-vous
               </a>

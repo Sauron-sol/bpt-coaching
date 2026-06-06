@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-bpt-charcoal">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Large brand + links */}
-        <div className="py-20 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 gap-10 py-16 sm:gap-12 sm:py-20 lg:grid-cols-12 lg:gap-16">
           {/* Brand */}
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
@@ -21,7 +21,7 @@ export default function Footer() {
                 height={32}
                 className="rounded-full opacity-80"
               />
-              <div className="leading-none">
+              <div className="min-w-0 leading-none">
                 <span className="text-[11px] font-semibold tracking-[0.25em] text-white/80 uppercase">
                   Baptiste
                 </span>
@@ -50,7 +50,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[13px] text-white/75 hover:text-white transition-colors duration-300 hover-line"
+                    className="inline-flex min-h-11 items-center text-[13px] text-white/75 transition-colors duration-300 hover:text-white hover-line"
                   >
                     {link.label}
                   </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] text-white/75 hover:text-white transition-colors duration-300"
+                  className="inline-flex min-h-11 items-center text-[13px] text-white/75 transition-colors duration-300 hover:text-white"
                 >
                   WhatsApp
                 </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] text-white/75 hover:text-white transition-colors duration-300"
+                  className="inline-flex min-h-11 items-center text-[13px] text-white/75 transition-colors duration-300 hover:text-white"
                 >
                   Instagram
                 </a>
@@ -98,7 +98,7 @@ export default function Footer() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[12px] text-white/75 hover:text-bpt-red transition-colors duration-300"
+              className="inline-flex min-h-11 max-w-full items-center break-all text-[12px] text-white/75 transition-colors duration-300 hover:text-bpt-red"
             >
               @baptiste.personal.trainer06
             </a>

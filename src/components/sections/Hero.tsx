@@ -38,9 +38,9 @@ export default function Hero() {
       </motion.div>
 
       {/* Main content */}
-      <div className="relative z-10 flex-1 flex items-center pt-24 sm:pt-28 px-6 lg:px-12">
+      <div className="relative z-10 flex flex-1 items-center px-6 pt-24 sm:pt-28 lg:px-12">
         <div className="max-w-[1400px] mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-8">
             {/* Left — Title + description */}
             <div className="lg:col-span-7">
               {/* Subtitle */}
@@ -48,10 +48,10 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-4 mb-8"
+                className="mb-6 flex flex-wrap items-center gap-3 sm:mb-8 sm:gap-4"
               >
                 <div className="w-12 h-px bg-bpt-red" />
-                <span className="text-[11px] font-semibold tracking-[0.3em] text-bpt-red uppercase">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-bpt-red sm:tracking-[0.3em]">
                   Coach certifié — Nice & Monaco
                 </span>
               </motion.div>
@@ -61,7 +61,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="font-heading text-[clamp(3rem,8vw,7.5rem)] leading-[1.1] tracking-[-0.03em] text-bpt-charcoal mb-10"
+                className="mb-8 max-w-[10ch] font-heading text-[clamp(2.5rem,12vw,7.5rem)] leading-[0.98] tracking-[-0.03em] text-bpt-charcoal sm:mb-10 sm:leading-[1.05]"
               >
                 Le corps
                 <br />
@@ -78,7 +78,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
-                className="text-[15px] leading-[1.8] text-bpt-text-muted max-w-md mb-10"
+                className="mb-10 max-w-md text-[15px] leading-[1.8] text-bpt-text-muted"
               >
                 Un accompagnement sur-mesure alliant science de
                 l&apos;entraînement et nutrition personnalisée.
@@ -92,14 +92,14 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.8 }}
               >
                 <div className="flex flex-col items-start gap-4">
-                  <span className="text-[11px] tracking-[0.2em] text-bpt-text-muted/70 uppercase">
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-bpt-text-muted/70">
                     Première consultation gratuite
                   </span>
                   <a
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 rounded-full bg-bpt-charcoal px-7 py-4 text-sm font-semibold tracking-wider text-white uppercase hover:bg-bpt-red transition-colors"
+                    className="group inline-flex min-h-11 w-full items-center justify-center gap-3 rounded-full bg-bpt-charcoal px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-bpt-red sm:w-auto sm:px-7 sm:py-4"
                   >
                     <span>Prendre RDV</span>
                     <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
@@ -113,12 +113,12 @@ export default function Hero() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.5 }}
-              className="lg:col-span-5 flex flex-col items-center lg:items-end"
+              className="flex flex-col items-center lg:col-span-5 lg:items-end"
             >
               <div className="relative flex flex-col items-center">
                 {/* Photo — large, no card, seamless fade on all sides */}
                 <div
-                  className="relative w-full max-w-[400px] aspect-[10/11.5] sm:w-[480px] sm:max-w-[480px] sm:h-[540px] lg:w-[560px] lg:max-w-[560px] lg:h-[620px]"
+                  className="relative aspect-[10/11.5] w-full max-w-[320px] sm:w-[480px] sm:max-w-[480px] sm:h-[540px] lg:w-[560px] lg:max-w-[560px] lg:h-[620px]"
                   style={{
                     maskImage: `radial-gradient(ellipse 70% 58% at 50% 35%, black 40%, transparent 75%)`,
                     WebkitMaskImage: `radial-gradient(ellipse 70% 58% at 50% 35%, black 40%, transparent 75%)`,
@@ -135,13 +135,13 @@ export default function Hero() {
                 </div>
 
                 {/* Logo — ROUND, big, overlapping deeply into the fade zone */}
-                <div className="relative -mt-32 sm:-mt-40 lg:-mt-52 z-10">
-                  <div className="relative w-[220px] h-[220px] rounded-full overflow-hidden ring-[6px] ring-bpt-cream shadow-2xl">
+                <div className="relative z-10 -mt-20 sm:-mt-40 lg:-mt-52">
+                  <div className="relative h-[160px] w-[160px] overflow-hidden rounded-full ring-4 ring-bpt-cream shadow-2xl sm:h-[220px] sm:w-[220px] sm:ring-[6px]">
                     <Image
                       src="/logo.jpeg"
                       alt="Logo Baptiste Personal Trainer"
                       fill
-                      sizes="220px"
+                      sizes="(max-width: 640px) 160px, 220px"
                       className="object-cover rounded-full"
                     />
                   </div>
@@ -170,17 +170,17 @@ export default function Hero() {
         className="relative z-10 border-t border-bpt-border"
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-3 divide-x divide-bpt-border">
+          <div className="grid grid-cols-1 divide-y divide-bpt-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {[
               { value: "2018", label: "Année de création" },
               { value: "4", label: "Certifications internationales" },
               { value: "5", label: "Formules sur-mesure" },
             ].map((stat) => (
-              <div key={stat.label} className="py-6 lg:py-8 px-4 lg:px-8 text-center lg:text-left">
-                <p className="font-heading text-xl lg:text-2xl text-bpt-charcoal tracking-tight">
+              <div key={stat.label} className="px-4 py-5 text-center sm:px-5 sm:py-6 lg:px-8 lg:py-8 lg:text-left">
+                <p className="font-heading text-xl tracking-tight text-bpt-charcoal lg:text-2xl">
                   {stat.value}
                 </p>
-                <p className="text-[11px] tracking-[0.15em] text-bpt-text-muted/60 uppercase mt-1">
+                <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-bpt-text-muted/60 sm:tracking-[0.15em]">
                   {stat.label}
                 </p>
               </div>

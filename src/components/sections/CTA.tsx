@@ -16,12 +16,12 @@ export default function CTA() {
       <FloatingOrbs variant="cream" />
 
       {/* Large watermark text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none">
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 0.02 } : {}}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="font-heading text-[clamp(8rem,20vw,18rem)] leading-none tracking-tighter text-bpt-charcoal whitespace-nowrap"
+          className="whitespace-nowrap font-heading text-[clamp(5rem,20vw,18rem)] leading-none tracking-tighter text-bpt-charcoal"
         >
           TRANSFORMATION
         </motion.p>
@@ -41,7 +41,7 @@ export default function CTA() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-heading text-[clamp(2.8rem,7vw,6rem)] leading-[0.92] tracking-[-0.04em] text-bpt-charcoal"
+              className="font-heading text-[clamp(2.35rem,11vw,6rem)] leading-[0.94] tracking-[-0.04em] text-bpt-charcoal"
             >
               Prêt à
               <br />
@@ -66,7 +66,7 @@ export default function CTA() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-5"
+              className="group inline-flex min-h-11 flex-wrap items-center gap-4 rounded-[32px] border border-bpt-border/70 bg-white/70 px-5 py-4 backdrop-blur-sm sm:flex-nowrap sm:gap-5"
             >
               <span className="flex flex-col">
                 <span className="text-[11px] tracking-[0.2em] text-bpt-text-muted/70 uppercase mb-2">
@@ -76,12 +76,12 @@ export default function CTA() {
                   Discuter sur WhatsApp
                 </span>
               </span>
-              <span className="w-16 h-16 rounded-full bg-bpt-charcoal flex items-center justify-center group-hover:bg-bpt-red transition-colors duration-500 group-hover:scale-105">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-bpt-charcoal transition-colors duration-500 group-hover:scale-105 group-hover:bg-bpt-red sm:h-16 sm:w-16">
                 <ArrowUpRight className="w-5 h-5 text-white group-hover:rotate-45 transition-transform duration-500" />
               </span>
             </a>
 
-            <div className="flex items-center gap-6 mt-10 text-[11px] tracking-[0.15em] text-bpt-text-muted/70 uppercase">
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.15em] text-bpt-text-muted/70">
               <span>Sans engagement</span>
               <span className="w-1 h-1 rounded-full bg-bpt-border" />
               <span>Réponse sous 24h</span>

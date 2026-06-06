@@ -63,13 +63,13 @@ export default function About() {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="max-w-xl"
             >
-              <p className="text-[17px] leading-[1.9] text-bpt-text-muted mb-6 font-light">
+              <p className="mb-6 text-[15px] leading-[1.9] text-bpt-text-muted font-light sm:text-[17px]">
                 Je suis Baptiste, coach sportif et nutritionnel certifié sur la Côte d&apos;Azur.
                 Mon approche est simple : <strong className="font-medium text-bpt-charcoal">comprendre ton corps</strong>,
                 définir des objectifs réalistes et construire un programme qui
                 s&apos;intègre dans <strong className="font-medium text-bpt-charcoal">ta vie</strong>.
               </p>
-              <p className="text-[17px] leading-[1.9] text-bpt-text-muted font-light">
+              <p className="text-[15px] leading-[1.9] text-bpt-text-muted font-light sm:text-[17px]">
                 Chaque personne est unique. C&apos;est pourquoi chaque programme l&apos;est aussi.
                 Science de l&apos;entraînement, nutrition adaptée et un suivi humain.
                 C&apos;est ce qui fait la différence entre un régime qui échoue et une
@@ -84,20 +84,20 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-24 pt-16 border-t border-bpt-border relative"
+          className="relative mt-24 border-t border-bpt-border pt-16"
         >
           <div className="shimmer-line absolute top-0 left-0 right-0 h-px overflow-hidden" />
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
             {certifications.map((cert, i) => (
               <motion.div
                 key={cert.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.8 + 0.1 * i }}
-                className="group relative"
+                className="group relative rounded-3xl border border-bpt-border/70 bg-white/40 p-5 sm:p-6 lg:border-0 lg:bg-transparent lg:p-0"
               >
-                <span className="font-heading text-[3rem] lg:text-[4rem] leading-none text-bpt-border/50 absolute -top-2 -left-1 select-none font-light">
+                <span className="pointer-events-none absolute -left-1 -top-2 select-none font-heading text-[3rem] leading-none font-light text-bpt-border/50 lg:text-[4rem]">
                   0{i + 1}
                 </span>
                 <div className="pt-10">
