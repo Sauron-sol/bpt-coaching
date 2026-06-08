@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const certifications = [
-  { name: "BEES 1er Degré", detail: "Brevet d'État d'Éducateur Sportif" },
+  { name: "DEES 1er Degré", detail: "Diplôme d'État d'Éducateur Sportif" },
   { name: "Bayesian PT", detail: "Bayesian Personal Trainer Certified" },
   { name: "PNCE Niveau 3", detail: "Certification Internationale Canadienne" },
   { name: "Sciences", detail: "Entraînement & Nutrition" },
