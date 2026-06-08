@@ -5,7 +5,6 @@ import { useRef } from "react";
 import {
   ArrowUpRight,
   Check,
-  Crown,
   MapPin,
   Sparkles,
   type LucideIcon,
@@ -57,8 +56,7 @@ const privatePlans: PrivatePlan[] = [
       "Même coaching personnalisé, pour les séances en extérieur sur Monaco. Tarif adapté au déplacement.",
     travel: "Déplacement sur Monaco",
     highlights: ["Séance 1:1 personnalisée", "Coaching en extérieur", "Suivi progression"],
-    icon: Crown,
-    dark: true,
+    icon: MapPin,
   },
 ];
 
