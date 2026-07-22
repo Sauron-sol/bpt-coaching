@@ -125,7 +125,7 @@ export default function Hero() {
                   }}
                 >
                   <Image
-                    src="/baptiste.png"
+                    src="/baptiste-coach.png"
                     alt="Baptiste — Coach sportif et nutritionnel"
                     fill
                     sizes="(max-width: 640px) 400px, (max-width: 1024px) 480px, 560px"
